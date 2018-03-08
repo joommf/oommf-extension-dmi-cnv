@@ -19,7 +19,6 @@ RUN make
 
 # Change working directory.
 WORKDIR /usr/local/oommf-extension-dmi-cnv
-RUN ls
 
 # Create OOMMFTCL environment variable
 ENV OOMMFTCL /usr/local/oommf/oommf/oommf.tcl
