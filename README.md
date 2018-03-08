@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/joommf/oommf-extension-dmi-cnv.svg?branch=master)](https://travis-ci.org/joommf/oommf-extension-dmi-cnv)
+
 # [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) of class Cnv
 
 Authors: David Cortés-Ortuño, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr
