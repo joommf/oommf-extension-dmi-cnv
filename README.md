@@ -1,4 +1,4 @@
-# [Object Oriented MicroMagnetic Framework (OOMMF)](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) of class Cnv
+# [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) of class Cnv
 
 Authors: David Cortés-Ortuño, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr
 
@@ -18,9 +18,9 @@ where <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;[\text{J}/\tex
 
 This OOMMF extension works both with and without periodic boundary conditions (PBC). Therefore, it is possible to use the same class in either kind of mesh (`Oxs_RectangularMesh` or `Oxs_PeriodicRectangularMesh`).
 
-## Example
+## Examples
 
-Examples are provided in the MIF files for the stabilisation of an isolated skyrmion in a confined cuboid (no periodic boundary conditions) and for the stabilisation of a skyrmion lattice in a unit cell of an infinite system (with periodic boundary conditions).
+Examples are provided in `.mif` files for the stabilisation of an isolated skyrmion in a confined cuboid (no periodic boundary conditions) and for the stabilisation of a skyrmion lattice in a unit cell of an infinite system (with periodic boundary conditions).
 
 ## Installation
 
@@ -38,8 +38,8 @@ If you use this OOMMF extension in your research, please cite it as:
 
 ## References
 
-[1] A. Bogdanov and D. Yablonskii, Zh. Eksp. Teor. Fiz 95, 178 (1989).
+[1] A. Bogdanov and D. Yablonskii. Thermodynamically stable "vortices" in magnetically ordered crystals. The mixed state of magnets. [Zh. Eksp. Teor. Fiz 95, 178 (1989)](http://www.jetp.ac.ru/cgi-bin/e/index/e/68/1/p101?a=list).
 
-[2] A. O. Leonov, T. L. Monchesky, N. Romming, A. Kubetzka, A. N. Bogdanov, and R. Wiesendanger, New J. of Phys. 18, 1 (2015).
+[2] A. O. Leonov, T. L. Monchesky, N. Romming, A. Kubetzka, A. N. Bogdanov, and R. Wiesendanger. The properties of isolated chiral skyrmions in thin magnetic films. [New J. of Phys. 18, 065003 (2015)](http://iopscience.iop.org/article/10.1088/1367-2630/18/6/065003/meta).
 
-[3] S. Rohart and A. Thiaville, Phys. Rev. B 88, 184422 (2013).
+[3] S. Rohart and A. Thiaville. Skyrmion confinement in ultrathin film nanostructures in the presence of Dzyaloshinskii-Moriya interaction. [Phys. Rev. B 88, 184422 (2013)](http://journals.aps.org/prb/abstract/10.1103/PhysRevB.88.184422).
