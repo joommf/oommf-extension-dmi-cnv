@@ -6,7 +6,6 @@ travis-build: SHELL:=/bin/bash
 travis-build:
 	docker build --no-cache -t dockertestimage .
 	docker run -ti -d --name testcontainer dockertestimage
-	docker exec testcontainer ls
 	docker exec testcontainer make test-all
 	docker stop testcontainer
 	docker rm testcontainer
