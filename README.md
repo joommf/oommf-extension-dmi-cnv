@@ -11,11 +11,11 @@ Authors: David Cortés-Ortuño<sup>1</sup>, Marijan Beg<sup>1,2</sup>, Vanessa N
 
 ## Introduction
 
-Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. The mathematical formalism was also applied to interfacial DMI systems [2]. This module is a modification and extension of the OOMMF extension for the interfacial system [3].
+Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. The mathematical formalism was also applied to interfacial DMI systems [2]. This module is a modification and extension of the OOMMF extension for interfacial systems [3].
 
 ## Energy density
 
-The DMI energy density for crystallographic class Cnv as a sum of Lifshitz invariants [1, 2] is
+The DMI energy density for the crystallographic class Cnv as a sum of Lifshitz invariants [1, 2] is
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\LARGE&space;w&space;=&space;D&space;\left(&space;\mathcal{L}_{xz}^{(x)}&space;&plus;&space;\mathcal{L}_{yz}^{(y)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\bm{\nabla}m_{z}&space;-&space;m_{z}&space;\bm{\nabla}\cdot\mathbf{m}&space;\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\LARGE&space;w&space;=&space;D&space;\left(&space;\mathcal{L}_{xz}^{(x)}&space;&plus;&space;\mathcal{L}_{yz}^{(y)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\bm{\nabla}m_{z}&space;-&space;m_{z}&space;\bm{\nabla}\cdot\mathbf{m}&space;\right)" title="\LARGE w = D \left( \mathcal{L}_{xz}^{(x)} + \mathcal{L}_{yz}^{(y)} \right)= D \left( \mathbf{m} \cdot \bm{\nabla}m_{z} - m_{z} \bm{\nabla}\cdot\mathbf{m} \right)" /></a>
 
