@@ -2,7 +2,7 @@
 
 # [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) for crystallographic class Cnv
 
-Authors: David Cortés-Ortuño, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr
+Authors: David Cortés-Ortuño<sup>1</sup>, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr
 
 ## Introduction
 
@@ -40,6 +40,10 @@ If you require support on installation or usage of this OOMMF extension, you are
 ## How to cite
 
 If you use this OOMMF extension in your research, please cite it as:
+
+## Acknowledgements
+
+This extension was developed as a part of OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and the EPSRC Programme grant on Skyrmionics (EP/N032128/1).
 
 ## References
 
