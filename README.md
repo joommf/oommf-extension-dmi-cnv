@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/joommf/oommf-extension-dmi-cnv.svg?branch=master)](https://travis-ci.org/joommf/oommf-extension-dmi-cnv)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 # [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) for crystallographic class Cnv
 
@@ -39,11 +40,15 @@ Examples are provided in `.mif` files for the stabilisation of an isolated skyrm
 
 ## Support
 
-If you require support on installation or usage of this OOMMF extension, you are welcome to raise an issue in our [joommf/help](https://github.com/joommf/help) repository.
+If you require support on installation or usage of this OOMMF extension as well as if you want to report a problem, you are welcome to raise an issue in our [joommf/help](https://github.com/joommf/help) repository.
 
 ## How to cite
 
 If you use this OOMMF extension in your research, please cite it as:
+
+## License
+
+This extension is licensed under the BSD 3-Clause "New" or "Revised" License. For details, please refer to the [LICENSE](LICENSE) file.
 
 ## Acknowledgements
 
