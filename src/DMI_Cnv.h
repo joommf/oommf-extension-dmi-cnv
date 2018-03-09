@@ -1,13 +1,12 @@
 /* FILE: DMI_Cnv.h            -*-Mode: c++-*-
  *
- * C_nv symmetry Dzyaloshinskii-Moriya energy [1]:
+ * Dzyaloshinskii-Moriya energy for the Cnv crystallographic class [1]:
  *
- * $w_\text{dmi} = D (  L_{zx}^{(x)} + L_{zy}^{(y)} )
+ * $w_\text{dmi} = D ( L_{xz}^{(x)} + L_{yz}^{(y)} )
  *
- * Working with Periodic Boundaries.
+ * This extension works both with and without periodic boundary conditions.
  *
- * Modification by D. Cortes, Marijan Beg and Hans Fangohr (University of Southampton) 
- * of Oxs_DMexchange6ngbr.h [1]
+ * Extension and modification by David Cortes-Ortuno, Marijan Beg and Hans Fangohr (University of Southampton and European XFEL GmbH) of Oxs_DMexchange6ngbr.h [2].
  *
  * Developed as a part of OpenDreamKit Horizon 2020 European Research Infrastructure
  * project (676541), and the EPSRC Programme grant on Skyrmionics (EP/N032128/1).
@@ -15,7 +14,6 @@
  * [1] A. N. Bogdanov and D. A. Yablonskii. Zh. Eksp. Teor. Fiz. 95, 178-182 (1989).
  * [2] Rohart, S., & Thiaville, A. Physical Review B, 88, 184422 (2013).
  *
- * This is the up-to-date version for OOMMF 1.2.a.5.
  */
 
 #ifndef _OXS_DMI_CNV
