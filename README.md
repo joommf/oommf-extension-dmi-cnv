@@ -2,7 +2,11 @@
 
 # [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) for crystallographic class Cnv
 
-Authors: David Cortés-Ortuño<sup>1</sup>, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr
+Authors: David Cortés-Ortuño<sup>1</sup>, Marijan Beg<sup>1,2</sup>, Vanessa Nehruji<sup>3</sup>, Ryan A. Pepper<sup>1</sup>, and Hans Fangohr<sup>1,2</sup>
+
+<sup>1</sup> Faculty of Engineering and the Environment, University of Southampton, Southampton SO17 1BJ, United Kingdom
+<sup>2</sup> European XFEL GmbH, Holzkoppel 4, 22869 Schenefeld, Germany
+<sup>3</sup> Department of Physics, University of Durham, Durham DH1 3LE, United Kingdom
 
 ## Introduction
 
