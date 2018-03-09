@@ -52,7 +52,7 @@ This extension is licensed under the BSD 3-Clause "New" or "Revised" License. Fo
 
 ## Acknowledgements
 
-This extension was developed as a part of OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and the EPSRC Programme grant on Skyrmionics (EP/N032128/1).
+This extension was developed as a part of [OpenDreamKit](http://opendreamkit.org/) – Horizon 2020 European Research Infrastructure project (676541) and the [EPSRC Programme grant on Skyrmionics (EP/N032128/1)](https://www.skyrmions.ac.uk/).
 
 ## References
 
