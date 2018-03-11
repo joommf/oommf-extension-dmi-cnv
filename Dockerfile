@@ -11,14 +11,14 @@ RUN git clone http://github.com/fangohr/oommf.git
 # RUN git clone http://github.com/joommf/oommf-extension-dmi-cnv.git
 
 # Copy OOMMF extension to OOMMF directory.
-ADD src/* oommf/oommf/app/oxs/local/
+# COPY src/* oommf/oommf/app/oxs/local/
 
 # COPY Makefile etc into image
-ADD * ./
+COPY . oommf-extension-dmi-cnv/
 
 # COPY example files
-RUN mkdir examples
-ADD examples/* examples/
+#RUN mkdir examples
+#COPY examples/* examples/
 
 # Compile OOMMF.
 WORKDIR /usr/local/oommf
