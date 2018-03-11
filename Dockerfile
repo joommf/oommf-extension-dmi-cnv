@@ -13,6 +13,13 @@ RUN git clone http://github.com/fangohr/oommf.git
 # Copy OOMMF extension to OOMMF directory.
 ADD src/* oommf/oommf/app/oxs/local/
 
+# COPY Makefile etc into image
+ADD * ./
+
+# COPY example files
+RUN mkdir examples
+ADD examples/* examples/
+
 # Compile OOMMF.
 WORKDIR /usr/local/oommf
 RUN make
