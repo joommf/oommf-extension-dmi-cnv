@@ -49,7 +49,6 @@ If you use this OOMMF extension in your research, please cite it as:
 
 David Cortés-Ortuño, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, & Hans Fangohr. OOMMF extension: Dzyaloshinskii-Moriya interaction (DMI) for the crystallographic class Cnv (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.1196417 (12 March 2018).
 
-
 ## License
 
 This extension is licensed under the BSD 3-Clause "New" or "Revised" License. For details, please refer to the [LICENSE](LICENSE) file.
