@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/joommf/oommf-extension-dmi-cnv.svg?branch=master)](https://travis-ci.org/joommf/oommf-extension-dmi-cnv)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-# [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) for crystallographic class Cnv
+# [OOMMF](https://math.nist.gov/oommf/) extension: Dzyaloshinskii-Moriya interaction (DMI) for crystallographic class C<sub>nv</sub>
 
 David Cortés-Ortuño<sup>1</sup>, Marijan Beg<sup>1,2</sup>, Vanessa Nehruji<sup>3</sup>, Ryan A. Pepper<sup>1</sup>, and Hans Fangohr<sup>1,2</sup>
 
@@ -15,7 +15,7 @@ Different Dzyaloshinskii-Moriya interaction forms can be written as different co
 
 ## Energy density
 
-The DMI energy density for the crystallographic class Cnv as a sum of Lifshitz invariants [1, 2] is
+The DMI energy density for the crystallographic class C<sub>nv</sub> as a sum of Lifshitz invariants [1, 2] is
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\LARGE&space;w&space;=&space;D&space;\left(&space;\mathcal{L}_{xz}^{(x)}&space;&plus;&space;\mathcal{L}_{yz}^{(y)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\bm{\nabla}m_{z}&space;-&space;m_{z}&space;\bm{\nabla}\cdot\mathbf{m}&space;\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\LARGE&space;w&space;=&space;D&space;\left(&space;\mathcal{L}_{xz}^{(x)}&space;&plus;&space;\mathcal{L}_{yz}^{(y)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\bm{\nabla}m_{z}&space;-&space;m_{z}&space;\bm{\nabla}\cdot\mathbf{m}&space;\right)" title="\LARGE w = D \left( \mathcal{L}_{xz}^{(x)} + \mathcal{L}_{yz}^{(y)} \right)= D \left( \mathbf{m} \cdot \bm{\nabla}m_{z} - m_{z} \bm{\nabla}\cdot\mathbf{m} \right)" /></a>
 
