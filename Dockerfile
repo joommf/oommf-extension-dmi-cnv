@@ -8,7 +8,7 @@ WORKDIR /usr/local
 RUN git clone http://github.com/fangohr/oommf.git
 
 # Copy OOMMF extension to OOMMF directory.
-COPY src/* oommf/oommf/app/oxs/local
+COPY src/* oommf/oommf/app/oxs/local/
 
 # Compile OOMMF.
 WORKDIR /usr/local/oommf
