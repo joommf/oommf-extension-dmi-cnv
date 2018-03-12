@@ -7,8 +7,12 @@ RUN apt-get install -y git tk-dev tcl-dev
 WORKDIR /usr/local
 RUN git clone http://github.com/fangohr/oommf.git
 
+# Copy OOMMF extension repository.
+COPY . /usr/local/oommf-extension-dmi-cnv/
+WORKDIR /usr/local/oommf-extension-dmi-cnv/
+
 # Copy OOMMF extension to OOMMF directory.
-COPY src/* oommf/oommf/app/oxs/local/
+RUN cp oommf-extension-dmi-cnv/src/* oommf/oommf/app/oxs/local
 
 # Compile OOMMF.
 WORKDIR /usr/local/oommf
