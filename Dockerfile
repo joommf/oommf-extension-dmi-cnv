@@ -12,7 +12,7 @@ COPY . /usr/local/oommf-extension-dmi-cnv/
 WORKDIR /usr/local/oommf-extension-dmi-cnv/
 
 # Copy OOMMF extension to OOMMF directory.
-RUN cp src/* oommf/oommf/app/oxs/local/
+RUN cp src/* /usr/local/oommf/oommf/app/oxs/local/
 
 # Compile OOMMF.
 WORKDIR /usr/local/oommf
