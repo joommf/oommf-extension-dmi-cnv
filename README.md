@@ -12,7 +12,17 @@ David Cortés-Ortuño<sup>1</sup>, Marijan Beg<sup>1,2</sup>, Vanessa Nehruji<su
 
 ## Introduction
 
-Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. The mathematical formalism was also applied to interfacial DMI systems [2]. This module is a modification and extension of the OOMMF extension for interfacial systems [3].
+Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. This mathematical formalism can also be applied to interfacial DMI systems [2], where the lack of inversion symmetry in the magnetic system is present due to the interfaces between different materials. It is usually referred to the C<sub>nv</sub> DMI as interfacial DMI.
+
+This module is a modification and extension of the OOMMF extension for interfacial systems [3] and the differences are:
+
+1. Sign of the DMI constant,
+2. This OOMMF extension supports periodic boundary conditions.
+
+For the OOMMF extensions for other crystallographic classes, please refer to:
+
+1. T(O) - bulk DMI ([repository](https://github.com/joommf/oommf-extension-dmi-t))
+2. D<sub>2d</sub> - antiskyrmion DMI ([repository](https://github.com/joommf/oommf-extension-dmi-d2d))
 
 ## Energy density
 
