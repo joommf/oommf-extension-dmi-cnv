@@ -41,7 +41,7 @@ This OOMMF extension works both with and without periodic boundary conditions (P
 ## Installation
 
 To install this extension:
-1. Copy `DMI_Cnv.cc` and `DMI_Cnv.h` files from the `src` directory in this repository into the `app/oxs/local` directory in the OOMMF main directory.
+1. Copy `DMI_Cnv_[xyz].cc` and `DMI_Cnv_[xyz].h` files from the `src` directory in this repository into the `app/oxs/local` directory in the OOMMF main directory.
 2. Recompile OOMMF, usually by running
 ```
 tclsh oommf.tcl pimake distclean && tclsh oommf.tcl pimake upgrade && tclsh oommf.tcl pimake
