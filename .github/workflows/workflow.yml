@@ -1,0 +1,36 @@
+name: workflow
+on: [push]
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Initialisation
+      uses: actions/checkout@v2
+      with:
+        path: main
+
+    - name: install Tcl
+      run: sudo apt-get install tk-dev tcl-dev
+
+    - name: Clone OOMMF
+      uses: actions/checkout@v2
+      with:
+        repository: fangohr/oommf
+        path: oommf
+
+    - name: Copy OOMMF extensions
+      run: cp main/src/* oommf/oommf/app/oxs/local/
+
+    - name: compile OOMMF
+      run: |
+        cd oommf
+        make
+        cd ..
+
+    - name: run tests
+      run: |
+        export OOMMFTCL="$(pwd)/oommf/oommf/oommf.tcl"
+        cd main
+        make test-all
+
