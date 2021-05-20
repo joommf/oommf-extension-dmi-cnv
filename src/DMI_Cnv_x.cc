@@ -1,8 +1,8 @@
-/* FILE: DMI_Cnv.cc            -*-Mode: c++-*-
+/* FILE: DMI_Cnv_x.cc            -*-Mode: c++-*-
  *
  * Dzyaloshinskii-Moriya energy for the Cnv crystallographic class [1]:
  *
- * $w_\text{dmi} = D ( L_{xz}^{(x)} + L_{yz}^{(y)} )
+ * $w_\text{dmi} = D ( L_{yx}^{(y)} + L_{zx}^{(z)} )
  *
  * This extension works both with and without periodic boundary conditions.
  *
@@ -27,19 +27,19 @@
 #include "simstate.h"
 #include "threevector.h"
 #include "rectangularmesh.h"
-#include "DMI_Cnv.h"
+#include "DMI_Cnv_x.h"
 #include "energy.h"		// Needed to make MSVC++ 5 happy
 
 OC_USE_STRING;
 
 // Oxs_Ext registration support
-OXS_EXT_REGISTER(Oxs_DMI_Cnv);
+OXS_EXT_REGISTER(Oxs_DMI_Cnv_x);
 
 /* End includes */
 
 
 // Constructor
-Oxs_DMI_Cnv::Oxs_DMI_Cnv(
+Oxs_DMI_Cnv_x::Oxs_DMI_Cnv_x(
   const char* name,     // Child instance id
   Oxs_Director* newdtr, // App director
   const char* argstr)   // MIF input block parameters
@@ -134,7 +134,7 @@ Oxs_DMI_Cnv::Oxs_DMI_Cnv(
   VerifyAllInitArgsUsed();
 }
 
-Oxs_DMI_Cnv::~Oxs_DMI_Cnv()
+Oxs_DMI_Cnv_x::~Oxs_DMI_Cnv_x()
 {
   if(A_size>0 && D!=NULL) {
     delete[] D[0];
@@ -142,14 +142,14 @@ Oxs_DMI_Cnv::~Oxs_DMI_Cnv()
   }
 }
 
-OC_BOOL Oxs_DMI_Cnv::Init()
+OC_BOOL Oxs_DMI_Cnv_x::Init()
 {
   mesh_id = 0;
   region_id.Release();
   return Oxs_Energy::Init();
 }
 
-void Oxs_DMI_Cnv::GetEnergy
+void Oxs_DMI_Cnv_x::GetEnergy
 (const Oxs_SimState& state,
  Oxs_EnergyData& oed
  ) const
@@ -164,7 +164,7 @@ void Oxs_DMI_Cnv::GetEnergy
     for(OC_INDEX i=0;i<size;i++) {
       state.mesh->Center(i,location);
       if((region_id[i] = atlas->GetRegionId(location))<0) {
-	String msg = String("Import mesh to Oxs_DMI_Cnv::GetEnergy()"
+	String msg = String("Import mesh to Oxs_DMI_Cnv_x::GetEnergy()"
                             " routine of object ")
           + String(InstanceName())
 	  + String(" has points outside atlas ")
@@ -216,11 +216,10 @@ void Oxs_DMI_Cnv::GetEnergy
   OC_INDEX ydim = mesh->DimY();
   OC_INDEX zdim = mesh->DimZ();
   OC_INDEX xydim = xdim * ydim;
-  // OC_INDEX xyzdim = xdim * ydim * zdim;
+  OC_INDEX xyzdim = xdim * ydim * zdim;
 
-  OC_REAL8m wgtx = 1.0/(mesh->EdgeLengthX());
   OC_REAL8m wgty = 1.0/(mesh->EdgeLengthY());
-  //OC_REAL8m wgtz = -1.0/(mesh->EdgeLengthZ()*mesh->EdgeLengthZ());
+  OC_REAL8m wgtz = 1.0/(mesh->EdgeLengthZ());
 
   OC_REAL8m hcoef = -2/MU0;
 
@@ -237,8 +236,21 @@ void Oxs_DMI_Cnv::GetEnergy
         }
         OC_REAL8m* Drow = D[region_id[i]];
         ThreeVector sum(0.,0.,0.);
-        ThreeVector zu(0.,0.,1.);
+        ThreeVector xu(1.,0.,0.);
         OC_INDEX j;
+
+        if(z > 0 || zperiodic) {  // z- direction
+          if(z > 0) {
+            j = i - xydim;
+          } else if (zperiodic) {
+            j = i - xydim + xyzdim;
+          }
+          if(Ms_inverse[j] != 0.0) {
+            OC_REAL8m Dpair = Drow[region_id[j]];
+            ThreeVector uij(0.,0.,-1.);
+            sum += 0.5 * Dpair * wgtz * ((xu ^ uij) ^ spin[j]);
+          }
+        }
 
         if(y > 0 || yperiodic) {  // y- direction
           if(y > 0) {
@@ -248,47 +260,34 @@ void Oxs_DMI_Cnv::GetEnergy
           }
           if(Ms_inverse[j] != 0.0) {
             OC_REAL8m Dpair = Drow[region_id[j]];
-            ThreeVector uij(0.,-1.,0);
-            sum += 0.5 * Dpair * wgty * ((zu ^ uij) ^ spin[j]);
+            ThreeVector uij(0.,-1.,0.);
+            sum += 0.5 * Dpair * wgty * ((xu ^ uij) ^ spin[j]);
           }
         }
 
-        if(x > 0 || xperiodic) {  // x- direction
-          if(x > 0) {
-            j = i - 1;        // j = mesh->Index(x-1,y,z)
-          } else if (xperiodic) {
-            j = i - 1 + xdim; // x == 0, j = Index(xdim-1,y,z);
+        if(z < zdim - 1 || zperiodic) {  // z+ direction
+          if (z < zdim-1) {
+            j = i + xydim;
+          } else if (zperiodic) {
+            j = i + xydim - xyzdim;
           }
           if(Ms_inverse[j] != 0.0) {
             OC_REAL8m Dpair = Drow[region_id[j]];
-            ThreeVector uij(-1.,0.,0);
-            sum += 0.5 * Dpair * wgtx * ((zu ^ uij) ^ spin[j]);
+            ThreeVector uij(0.,0.,1.);
+            sum += 0.5 * Dpair * wgtz * ((xu ^ uij) ^ spin[j]);
           }
         }
 
-        if(y < ydim - 1 || yperiodic) {  // y+ direction
+        if(y < ydim-1 || yperiodic) {  // y+ direction
           if (y < ydim-1) {
             j = i + xdim;
           } else if (yperiodic) {
             j = i + xdim - xydim;
           }
-          if(Ms_inverse[j] != 0.0) {
-            OC_REAL8m Dpair = Drow[region_id[j]];
-            ThreeVector uij(0.,1.,0);
-            sum += 0.5 * Dpair * wgty * ((zu ^ uij) ^ spin[j]);
-          }
-        }
-
-        if(x < xdim-1 || xperiodic) {
-          if (x < xdim-1) {
-            j = i + 1;
-          } else if (xperiodic) {
-            j = i + 1 - xdim;
-          }
           if (Ms_inverse[j] != 0.0) {
             OC_REAL8m Dpair = Drow[region_id[j]];
-            ThreeVector uij(1.,0.,0);
-            sum += 0.5 * Dpair * wgtx * ((zu ^ uij) ^ spin[j]);
+            ThreeVector uij(0.,1.,0.);
+            sum += 0.5 * Dpair * wgty * ((xu ^ uij) ^ spin[j]);
           }
         }
 	
