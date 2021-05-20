@@ -1,9 +1,9 @@
 test-all:
 	ls -lh examples
-	tclsh $(OOMMFTCL) boxsi +fg examples/isolated_sk_DMI_Cnv.mif -exitondone 1
-	ls -lh examples
-	tclsh $(OOMMFTCL) boxsi +fg examples/sk_lattice_DMI_Cnv_PBCs.mif -exitondone 1
-	ls -lh examples
+  for FILE in `find examples -name "INPUT_*`; do \
+    tclsh $(OOMMFTCL) boxsi +fg $$FILE -exitondone 1;\
+    ls -lh examples; \
+  done
 
 travis-build:
 	docker build --no-cache -t dockertestimage .
