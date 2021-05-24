@@ -1,4 +1,4 @@
-# OOMMF extension: Dzyaloshinskii-Moriya interaction for crystallographic class C<sub>nv</sub>
+# OOMMF extension: Dzyaloshinskii-Moriya interaction for crystallographic class C<sub><i>nv</i></sub>
 
 David Cortés-Ortuño<sup>1,2</sup>, Marijan Beg<sup>1,3</sup>, Martin Lang<sup>1</sup>, Vanessa Nehruji<sup>1,4</sup>, Ryan A. Pepper<sup>1</sup>, and Hans Fangohr<sup>1,5,6</sup>
 
@@ -52,7 +52,7 @@ We give examples in `.mif` files for the relaxation resulting in an isolated sky
 
 ## Other crystallographic classes
 
-DMI extensions for other crystallographic classes are [D<sub>2d</sub>](https://github.com/joommf/oommf-extension-dmi-d2d) and [T(O)](https://github.com/joommf/oommf-extension-dmi-t).
+DMI extensions for other crystallographic classes are [D<sub><i>2d</i></sub>](https://github.com/joommf/oommf-extension-dmi-d2d) and [T(O)](https://github.com/joommf/oommf-extension-dmi-t).
 
 ## Support
 
