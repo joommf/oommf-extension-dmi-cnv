@@ -1,8 +1,16 @@
 name: workflow
-on: [push]
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * 1'  # run every Monday
+
 jobs:
   workflow:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
     steps:
     - name: Initialisation
@@ -27,6 +35,9 @@ jobs:
         cd oommf
         make
         cd ..
+
+    - name: set env
+      run: echo "OOMMFTCL=$GITHUB_WORKSPACE/oommf/oommf/oommf.tcl" >> $GITHUB_ENV
 
     - name: run tests
       run: |
