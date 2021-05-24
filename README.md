@@ -17,16 +17,14 @@ David Cortés-Ortuño<sup>1,2</sup>, Marijan Beg<sup>1,3</sup>, Martin Lang<sup>
 
 ## About
 
-Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. This mathematical formalism can also be applied to interfacial DMI systems [2], where the lack of inversion symmetry in the magnetic system is present due to the interfaces between different materials. It is usually referred to the C<sub>nv</sub> DMI as interfacial DMI.
+Different Dzyaloshinskii-Moriya interaction forms can be written as different combinations of Lifshitz invariants depending on the crystallographic class of the magnetic material [1]. This mathematical formalism can also be applied to interfacial DMI systems [2], where the lack of inversion symmetry in the magnetic system is present due to the interfaces between different materials. It is usually referred to the C<sub><i>nv</i></sub> DMI as interfacial DMI.
 
 This module is a modification and extension of the OOMMF extension for interfacial systems [3] and the differences are:
 
 1. Sign of the DMI constant,
 2. This OOMMF extension supports periodic boundary conditions.
 
-## Energy density
-
-The DMI energy density for the crystallographic class C<sub>nv</sub> as a sum of Lifshitz invariants [1, 2] is
+C<sub><i>nv</i></sub> crystallographic class has the following energy density [1, 2]:
 
 <a bhref="https://www.codecogs.com/eqnedit.php?latex=\LARGE&space;w_x&space;=&space;D&space;\left(&space;\mathcal{L}_{yx}^{(y)}&space;&plus;&space;\mathcal{L}_{zx}^{(z)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\nabla&space;m_{x}&space;-&space;m_{x}&space;\nabla\cdot\mathbf{m}&space;\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\LARGE&space;w_x&space;=&space;D&space;\left(&space;\mathcal{L}_{yx}^{(y)}&space;&plus;&space;\mathcal{L}_{zx}^{(z)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\nabla&space;m_{x}&space;-&space;m_{x}&space;\nabla\cdot\mathbf{m}&space;\right)" title="\LARGE w_x = D \left( \mathcal{L}_{yx}^{(x)} + \mathcal{L}_{zx}^{(z)} \right)= D \left( \mathbf{m} \cdot \nabla m_{x} - m_{x} \nabla\cdot\mathbf{m} \right)" /></a>
 <a bhref="https://www.codecogs.com/eqnedit.php?latex=\LARGE&space;w_y&space;=&space;D&space;\left(&space;\mathcal{L}_{xy}^{(x)}&space;&plus;&space;\mathcal{L}_{zy}^{(z)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\nabla&space;m_{y}&space;-&space;m_{y}&space;\nabla\cdot\mathbf{m}&space;\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\LARGE&space;w_y&space;=&space;D&space;\left(&space;\mathcal{L}_{xy}^{(x)}&space;&plus;&space;\mathcal{L}_{zy}^{(z)}&space;\right)=&space;D&space;\left(&space;\mathbf{m}&space;\cdot&space;\nabla&space;m_{y}&space;-&space;m_{y}&space;\nabla\cdot\mathbf{m}&space;\right)" title="\LARGE w_y = D \left( \mathcal{L}_{xy}^{(x)} + \mathcal{L}_{zy}^{(z)} \right)= D \left( \mathbf{m} \cdot \nabla m_{y} - m_{y} \nabla\cdot\mathbf{m} \right)" /></a>
