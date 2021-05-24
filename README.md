@@ -65,7 +65,7 @@ All contributions are welcome, however small they are. If you would like to cont
 
 1. David Cortés-Ortuño et al. Proposal for a micromagnetic standard problem for materials with Dzyaloshinskii–Moriya interaction. [*New J. Phys.* **20**, 113015](https://doi.org/10.1088/1367-2630/aaea1c) (2018).
 
-2. David Cortés-Ortuño, Marijan Beg, Vanessa Nehruji, Ryan A. Pepper, & Hans Fangohr. OOMMF extension: Dzyaloshinskii-Moriya interaction (DMI) for the crystallographic class Cnv (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.1196417 (12 March 2018).
+2. David Cortés-Ortuño, Marijan Beg, Martin Lang, Vanessa Nehruji, Ryan A. Pepper, and Hans Fangohr. OOMMF extension: Dzyaloshinskii-Moriya interaction for the crystallographic class Cnv. DOI: [10.5281/zenodo.1196417](http://doi.org/10.5281/zenodo.1196417) (2018).
 
 ## License
 
